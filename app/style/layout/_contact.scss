@@ -1,0 +1,77 @@
+@use "../util";
+
+.contact {
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .img {
+      flex: 1;
+      img {
+        width: 80%;
+      }
+    }
+    form {
+      flex: 1;
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        .radios {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          label {
+            margin-right: 1rem;
+          }
+        }
+        label {
+          color: util.$light-white;
+          text-transform: uppercase;
+        }
+
+        input:not([type="radio"]),
+        select {
+          background-color: util.$light-bg;
+          color: util.$white;
+          padding: 0.7rem;
+          width: 100%;
+          font-size: 1rem;
+          border-radius: 0.5rem;
+          border: none;
+          outline: none;
+        }
+        input[type="radio"] {
+          width: 1rem;
+          height: 1rem;
+          appearance: none;
+          background: util.$light-white;
+          cursor: pointer;
+          margin-right: 0.2rem;
+          transition: all 0.2s ease-in-out;
+          &:checked {
+            background-color: util.$green;
+            border-radius: 5rem;
+          }
+        }
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 1rem;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+    form {
+      width: 100%;
+    }
+  }
+}

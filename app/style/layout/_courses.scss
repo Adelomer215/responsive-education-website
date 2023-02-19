@@ -1,0 +1,38 @@
+@use "../util";
+
+.courses {
+  .slide {
+    background-color: util.$light-bg;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    user-select: none;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      width: 50%;
+      height: 10rem;
+    }
+    h3 {
+      margin: 1.5rem 0;
+      font-size: 1rem;
+      color: util.$white;
+    }
+    p {
+      line-height: 1.2;
+      color: util.$light-white;
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  background-color: util.$white;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: util.$green;
+}

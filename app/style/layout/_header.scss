@@ -1,0 +1,73 @@
+@use "../util";
+
+.pheader {
+  background-color: util.$light-bg;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1111;
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    position: relative;
+    .pheader__logo {
+      color: util.$white;
+      font-size: 1.5rem;
+    }
+    .pheader__nav {
+      ul {
+        display: flex;
+        list-style: none;
+        a {
+          color: #aaa;
+          margin-left: 1.8rem;
+          transition: all 0.4s ease;
+          display: inline-block;
+          padding: 0.3rem;
+          text-transform: capitalize;
+          &:hover {
+            color: util.$green;
+          }
+        }
+      }
+    }
+    #menu-btn {
+      cursor: pointer;
+      font-size: 2rem;
+      transition: all 0.4s ease;
+      &.fa-times {
+        transform: rotate(180deg);
+        color: red;
+      }
+    }
+  }
+}
+//   start media query
+@media (min-width: 0px) and (max-width: 768px) {
+  .pheader__nav {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    background-color: util.$light-bg;
+    transition: all 0.4s ease;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    &.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    ul {
+      flex-direction: column;
+    }
+  }
+}
+@media (min-width: 769px) {
+  .pheader {
+    #menu-btn {
+      display: none;
+    }
+  }
+}

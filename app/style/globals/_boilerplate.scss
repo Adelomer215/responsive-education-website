@@ -1,0 +1,81 @@
+@use "../util";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: util.$f-size;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+}
+
+body {
+  font-family: util.$font;
+  background-color: util.$black;
+  color: util.$white;
+}
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: util.$green;
+  border-radius: 5rem;
+}
+::-webkit-scrollbar-thumb:active {
+  background: red;
+}
+
+/* container */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* container */
+.heading {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--white);
+  text-transform: uppercase;
+}
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background-color: util.$light-bg;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 1.8rem;
+  padding: 1rem 3rem;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  &:hover {
+    background-color: util.$green;
+  }
+}
